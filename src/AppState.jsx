@@ -18,9 +18,18 @@ const reducer = (state, action) => {
 const AppContext = React.createContext(null);
 
 // App State Component
-const AppState = (props) => {
+export const AppState = (props) => {
   // Create Reducer w/ userReducer
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return <AppContext.Provider>{props.children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={(state, dispatch)}>
+      {props.children}
+    </AppContext.Provider>
+  );
+};
+
+// Use App State Hook
+export const useAppState = () => {
+  return React.useContext(AppContext);
 };
