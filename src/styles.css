@@ -1,4 +1,25 @@
-h1,
-h2 {
-  color: blue;
+header {
+  text-align: center;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  padding: 2%;
+}
+
+header nav div {
+  font-size: larger;
+  background-color: lightblue;
+  padding: 10px;
+  margin: 0 40px;
+  border-radius: 7px;
+  width: 200px;
+}
+
+header nav div:hover {
+  background-color: gold;
+  color: black;
 }
