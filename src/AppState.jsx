@@ -5,11 +5,44 @@ import { useContext, useReducer } from "react";
 const initialState = {
   // Return 's' when deploying
   url: "http://brandon-czaja-plants.herokuapp.com",
+  token: null,
+  username: null,
 };
 
 // Reducer
 const reducer = (state, action) => {
   switch (action.type) {
+    case "signup":
+      fetch(state.url + "/users/", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(action.payload),
+      })
+        .then((response) => response.json())
+        .then((user) => {
+          return {
+            ...state,
+            token: user.token,
+          };
+        });
+    case "login":
+      fetch(state.url + "/login/", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(action.payload),
+      })
+        .then((response) => response.json())
+        .then((user) => {
+          return {
+            ...state,
+            token: user.token,
+            username: user.username,
+          };
+        });
     default:
       return state;
   }
