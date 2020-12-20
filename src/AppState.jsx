@@ -12,6 +12,7 @@ const reducer = (state, action) => {
   let newState;
   switch (action.type) {
     case "auth":
+      console.log(`Reducer State: ${state}`);
       newState = { ...state, ...action.payload };
       return newState;
       break;
