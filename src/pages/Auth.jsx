@@ -1,8 +1,11 @@
 import React from "react";
 import { useAppState } from "../AppState.jsx";
 
+// Renders whenever the url hits /login or /signup
 const Auth = (props) => {
+  // Rerenders every time the props changes. Changes the type of auth form depending on if the user is signing up or logging in
   const type = props.match.params.form;
+  // Create state for the form. Set the form data to empty username and empty password
   const [formData, setFormData] = React.useState({
     username: "",
     password: "",
@@ -19,6 +22,7 @@ const Auth = (props) => {
     }
   }, [userData]);
 
+  // These actions get passed to dispatch
   const actions = {
     signup: () => {
       console.log(`Actions State Check: ${state}`);
