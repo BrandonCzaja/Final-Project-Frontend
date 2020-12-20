@@ -25,15 +25,16 @@ const reducer = (state, action) => {
 };
 
 // App Context
-const AppContext = React.createContext(null);
+const AppContext = React.createContext(null); //Provides state to everything
 
 // App State Component
 export const AppState = (props) => {
-  // Create Reducer w/ userReducer
+  //Pass action(dispatch) to reducer
   const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(`App State Component: ${state}`);
 
   return (
-    <AppContext.Provider value={(state, dispatch)}>
+    <AppContext.Provider value={{ state, dispatch }}>
       {props.children}
     </AppContext.Provider>
   );

@@ -9,7 +9,7 @@ const Auth = (props) => {
   });
   const [userData, setUserData] = React.useState(null);
   const { state, dispatch } = useAppState();
-  console.log(`State: ${state}`);
+  console.log(`State coming in from useAppState: ${state}`);
 
   React.useEffect(() => {
     if (userData) {
