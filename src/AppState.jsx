@@ -8,9 +8,7 @@ const initialState = {
   username: null,
 };
 
-// Reducer
 const reducer = (state, action) => {
-  console.log(state);
   let newState;
   switch (action.type) {
     case "auth":
@@ -19,7 +17,6 @@ const reducer = (state, action) => {
       break;
     default:
       return state;
-      console.log(`Reducer State: ${state}`);
       break;
   }
 };
@@ -31,7 +28,6 @@ const AppContext = React.createContext(null); //Provides state to everything
 export const AppState = (props) => {
   //Pass action(dispatch) to reducer
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(`App State Component: ${state}`);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

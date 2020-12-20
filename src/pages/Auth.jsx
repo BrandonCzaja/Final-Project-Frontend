@@ -12,11 +12,9 @@ const Auth = (props) => {
   });
   const [userData, setUserData] = React.useState(null);
   const { state, dispatch } = useAppState();
-  console.log(`State coming in from useAppState: ${state}`);
-
+  state;
   React.useEffect(() => {
     if (userData) {
-      console.log(`User Data: ${userData}`);
       const { token, user } = userData;
       dispatch({ type: "auth", payload: { token, username: user.username } });
     }
@@ -25,7 +23,6 @@ const Auth = (props) => {
   // These actions get passed to dispatch
   const actions = {
     signup: () => {
-      console.log(`Actions State Check: ${state}`);
       // This route exists
       return fetch(state.url + "/users", {
         method: "post",
@@ -36,7 +33,6 @@ const Auth = (props) => {
       }).then((response) => response.json());
     },
     login: () => {
-      console.log(`Actions Login Check: ${state}`);
       // This route exists
       return fetch(state.url + "/login", {
         method: "post",
