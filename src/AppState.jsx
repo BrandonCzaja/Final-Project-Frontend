@@ -1,7 +1,6 @@
-import React from "react";
-import { useContext, useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 
-//Initial State
+//Initial State of the application:
 const initialState = {
   // Return 's' when deploying
   url: "http://brandon-czaja-plants.herokuapp.com",
@@ -11,40 +10,17 @@ const initialState = {
 
 // Reducer
 const reducer = (state, action) => {
+  console.log(state);
+  let newState;
   switch (action.type) {
-    case "signup":
-      fetch(state.url + "/users/", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(action.payload),
-      })
-        .then((response) => response.json())
-        .then((user) => {
-          return {
-            ...state,
-            token: user.token,
-          };
-        });
-    case "login":
-      fetch(state.url + "/login/", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(action.payload),
-      })
-        .then((response) => response.json())
-        .then((user) => {
-          return {
-            ...state,
-            token: user.token,
-            username: user.username,
-          };
-        });
+    case "auth":
+      newState = { ...state, ...action.payload };
+      return newState;
+      break;
     default:
       return state;
+      console.log(`Reducer State: ${state}`);
+      break;
   }
 };
 

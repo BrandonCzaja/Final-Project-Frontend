@@ -2,23 +2,45 @@ import React from "react";
 import { useAppState } from "../AppState.jsx";
 
 const Auth = (props) => {
-  // Changes the use of the form depending on if the route is sign up or log in
   const type = props.match.params.form;
   const [formData, setFormData] = React.useState({
     username: "",
     password: "",
   });
+  const [userData, setUserData] = React.useState(null);
+  const { state, dispatch } = useAppState();
+  console.log(`State: ${state}`);
 
-  const { dispatch } = useAppState();
+  React.useEffect(() => {
+    if (userData) {
+      console.log(`User Data: ${userData}`);
+      const { token, user } = userData;
+      dispatch({ type: "auth", payload: { token, username: user.username } });
+    }
+  }, [userData]);
 
   const actions = {
-    signup: {
-      action: "signup",
-      payload: formData,
+    signup: () => {
+      console.log(`Actions State Check: ${state}`);
+      // This route exists
+      return fetch(state.url + "/users", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }).then((response) => response.json());
     },
-    login: {
-      action: "login",
-      payload: formData,
+    login: () => {
+      console.log(`Actions Login Check: ${state}`);
+      // This route exists
+      return fetch(state.url + "/login", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }).then((response) => response.json());
     },
   };
 
@@ -28,7 +50,10 @@ const Auth = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(actions[type]);
+    // Both signup and login return the same data, the user
+    actions[type]().then((data) => {
+      setUserData(data);
+    });
   };
 
   return (
