@@ -72,7 +72,7 @@ const Auth = (props) => {
 
   return (
     <div>
-      <h1>Plant App</h1>
+      <h1>Plant App {type}</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
