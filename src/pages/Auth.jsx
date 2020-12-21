@@ -27,6 +27,7 @@ const Auth = (props) => {
         "auth",
         JSON.stringify({ token, username: user.username })
       );
+      // Send user to dashboard
       props.history.push("/dashboard");
     }
   }, [userData]);
@@ -71,6 +72,7 @@ const Auth = (props) => {
 
   return (
     <div>
+      <h1>Plant App</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
