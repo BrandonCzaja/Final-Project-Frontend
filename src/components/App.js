@@ -28,6 +28,7 @@ export const App = (props) => {
 
   return (
     <>
+      <h1>Hello from App.js</h1>
       <Route path="/" component={Nav} />
       <Switch>
         <Route exact path="/" component={Home} />
