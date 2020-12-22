@@ -13,7 +13,8 @@ const Plants = (props) => {
   };
   return (
     <>
-      <ul>
+      <h1>Hello from Plants Page</h1>
+      {/* <ul>
         {plants.map((plant) => {
           <div className="plant" key={plant.id}>
             <h2>{plant.common_name}</h2>
@@ -24,7 +25,7 @@ const Plants = (props) => {
             <img src={plant.image} />
           </div>;
         })}
-      </ul>
+      </ul> */}
     </>
   );
 };
