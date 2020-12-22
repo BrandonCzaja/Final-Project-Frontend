@@ -6,6 +6,17 @@ const initialState = {
   url: "http://brandon-czaja-plants.herokuapp.com",
   token: null,
   username: null,
+  plants: null,
+  blankPlant: {
+    api_id: 0,
+    common_name: "",
+    slug: "",
+    year: 0,
+    rank: "",
+    family_common_name: "",
+    image: "",
+    family: "",
+  },
 };
 
 const reducer = (state, action) => {
@@ -20,6 +31,11 @@ const reducer = (state, action) => {
       newState = { ...state, token: null, username: null };
       window.localStorage.removeItem("auth");
       return newState;
+      break;
+    case "getPlants":
+      newState = { ...state, plants: action.payload };
+      return newState;
+      break;
     default:
       return state;
       break;

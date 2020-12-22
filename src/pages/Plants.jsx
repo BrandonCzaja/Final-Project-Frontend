@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useReducer } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useAppState } from "../AppState.jsx";
 
 const Plants = (props) => {
-  // User should see message that says "Welcome to AppName, please sign up or log in"
-  // Stretch Goal: "See my other app, Park Life"
-  return <h1>Plants</h1>;
+  const { state, dispatch } = useAppState();
+  const { token, url, plants } = state;
+
+  const getPlants = async () => {
+    const response = fetch(url + "/plants");
+    const plants = await response.json();
+    dispatch({ type: "getPlants", payload: plants });
+  };
+  return (
+    <>
+      <ul>
+        {plants.map((plant) => {
+          <div className="plant" key={plant.id}>
+            <h2>{plant.common_name}</h2>
+            <h3>{plant.scientific_name}</h3>
+            <h3>{plant.year}</h3>
+            <h3>{plant.family}</h3>
+            <h3>{plant.genus}</h3>
+            <img src={plant.image} />
+          </div>;
+        })}
+      </ul>
+    </>
+  );
 };
 
 export default Plants;
