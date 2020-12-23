@@ -5,7 +5,6 @@ import Auth from "../pages/Auth.jsx";
 import Dashboard from "../pages/Dashboard.jsx";
 import Nav from "./Nav.jsx";
 import Plants from "../pages/Plants.jsx";
-import Search from "../pages/Search.jsx";
 import { useAppState } from "../AppState.jsx";
 
 export const App = (props) => {
@@ -21,7 +20,7 @@ export const App = (props) => {
       props.history.push("/dashboard");
     } else {
       // Otherwise, ask them to log in and send them to Home
-      alert("Please log in.");
+      // alert("Please log in.");
       props.history.push("/");
     }
   }, []);

@@ -8,14 +8,11 @@ const initialState = {
   username: null,
   plants: null,
   blankPlant: {
-    api_id: 0,
     common_name: "",
-    slug: "",
-    year: 0,
-    rank: "",
-    family_common_name: "",
-    image: "",
+    scientific_name: "",
     family: "",
+    genus: "",
+    image: "",
   },
 };
 
@@ -33,6 +30,7 @@ const reducer = (state, action) => {
       return newState;
       break;
     case "getPlants":
+      console.log(action.payload);
       newState = { ...state, plants: action.payload };
       return newState;
       break;
