@@ -20,7 +20,7 @@ const Plants = (props) => {
     dispatch({ type: "getPlants", payload: fetchedPlants });
   };
 
-  // Run getPlants at least once
+  // Run getPlants when the page loads
   React.useEffect(() => {
     getPlants();
   }, []);
@@ -32,10 +32,10 @@ const Plants = (props) => {
         <ul>
           {state.plants.map((plant) => (
             <div className="plant" key={plant.id}>
-              <h2>{plant.common_name}</h2>
-              <h2>{plant.scientific_name}</h2>
-              <h2>{plant.family}</h2>
-              <h2>{plant.genus}</h2>
+              <h2>Common Name: {plant.common_name}</h2>
+              <h2>Scientific Name: {plant.scientific_name}</h2>
+              <h2>Plant Family: {plant.family}</h2>
+              <h2>Plant Genus: {plant.genus}</h2>
               <img src={plant.image} alt={plant.common_name} />
             </div>
           ))}
