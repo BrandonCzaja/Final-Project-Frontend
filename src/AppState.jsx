@@ -3,8 +3,8 @@ import React, { useContext, useReducer } from "react";
 //Initial State of the application:
 const initialState = {
   // Removed 's' from url
-  url: "http://brandon-czaja-plants.herokuapp.com",
-
+  // url: "http://brandon-czaja-plants.herokuapp.com",
+  url: "http://localhost:3000",
   token: null,
   username: null,
   plants: null,
