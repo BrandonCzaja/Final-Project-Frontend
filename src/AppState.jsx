@@ -3,7 +3,7 @@ import React, { useContext, useReducer } from "react";
 //Initial State of the application:
 const initialState = {
   // Removed 's' from url
-  url: "http://brandon-czaja-plants.herokuapp.com",
+  url: "https://brandon-czaja-plants.herokuapp.com",
   // This local host works locally for getting all data, but the deployed site does not work
   // url: "http://localhost:3000",
   token: null,
