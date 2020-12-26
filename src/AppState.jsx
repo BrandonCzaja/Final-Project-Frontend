@@ -2,8 +2,9 @@ import React, { useContext, useReducer } from "react";
 
 //Initial State of the application:
 const initialState = {
-  // Return 's' when deploying
-  url: "https://brandon-czaja-plants.herokuapp.com",
+  // Removed 's' from url
+  url: "http://brandon-czaja-plants.herokuapp.com",
+
   token: null,
   username: null,
   plants: null,
