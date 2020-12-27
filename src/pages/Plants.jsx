@@ -5,8 +5,6 @@ import { useAppState } from "../AppState.jsx";
 const Plants = (props) => {
   const { state, dispatch } = useAppState();
   const { token, url, plants } = state;
-  console.log(state);
-  console.log(plants);
 
   const getPlants = async () => {
     const response = await fetch(url + "/plants/", {
@@ -27,7 +25,6 @@ const Plants = (props) => {
   }, []);
 
   const loaded = () => {
-    console.log(state);
     return (
       <div className="dashboard">
         <ul>

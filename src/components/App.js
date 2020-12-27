@@ -10,7 +10,7 @@ import { useAppState } from "../AppState.jsx";
 export const App = (props) => {
   // Destructor state and dispatch from useAppState()
   const { state, dispatch } = useAppState();
-  console.log(state);
+
   // Check to see if the user is logged in when the page loads
   React.useState(() => {
     // Check if there is a token in localStorage, if so parse it

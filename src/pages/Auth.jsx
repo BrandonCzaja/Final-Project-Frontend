@@ -10,18 +10,16 @@ const Auth = (props) => {
     username: "",
     password: "",
   });
-  console.log(formData);
+
   const [userData, setUserData] = React.useState(null);
-  console.log(userData);
+
   const { state, dispatch } = useAppState();
   state;
 
   React.useEffect(() => {
     if (userData) {
-      console.log(userData);
       const { token, user } = userData;
-      console.log(token);
-      console.log(user);
+
       dispatch({ type: "auth", payload: { token, username: user.username } });
       window.localStorage.setItem(
         "auth",
@@ -35,7 +33,6 @@ const Auth = (props) => {
   // These actions get passed to dispatch
   const actions = {
     signup: () => {
-      console.log(state);
       return fetch(state.url + "/users", {
         method: "post",
         headers: {
@@ -58,7 +55,6 @@ const Auth = (props) => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
 
   const handleSubmit = (event) => {
