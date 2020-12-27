@@ -11,6 +11,7 @@ module.exports = (env) => {
     output: {
       filename: "bundle.js",
       path: path.resolve(__dirname, "build"),
+      publicPath: "/",
     },
     module: {
       rules: [
@@ -73,6 +74,7 @@ module.exports = (env) => {
     devServer: {
       contentBase: "./dev",
       port: process.env.PORT,
+      historyApiFallback: true,
     },
   };
 

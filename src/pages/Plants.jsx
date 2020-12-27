@@ -5,7 +5,6 @@ import { useAppState } from "../AppState.jsx";
 const Plants = (props) => {
   const { state, dispatch } = useAppState();
   const { token, url, plants } = state;
-  console.log(state);
 
   const getPlants = async () => {
     const response = await fetch(url + "/plants/", {

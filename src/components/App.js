@@ -18,12 +18,15 @@ export const App = (props) => {
     // If there is a token, log the user in and bring them to the dashboard
     if (auth) {
       dispatch({ type: "auth", payload: auth });
-      props.history.push("/dashboard");
     } else {
       // Otherwise, ask them to log in and send them to Home
       props.history.push("/");
     }
   }, []);
+
+  // React.useState(() => {
+  //   window.location.reload();
+  // }, []);
 
   return (
     <>
