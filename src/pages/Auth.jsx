@@ -33,6 +33,7 @@ const Auth = (props) => {
   // These actions get passed to dispatch
   const actions = {
     signup: () => {
+      console.log(state);
       return fetch(state.url + "/users", {
         method: "post",
         headers: {
