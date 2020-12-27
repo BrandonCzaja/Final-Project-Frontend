@@ -4,8 +4,6 @@ import React, { useContext, useReducer } from "react";
 const initialState = {
   // THIS WORKS DO NOT REMOVE IT
   url: "https://brandon-czaja-plants.herokuapp.com",
-  // Testing
-  // url: "http://localhost:3000",
   token: null,
   username: null,
   plants: null,
