@@ -6,8 +6,36 @@ const Plants = (props) => {
   const { state, dispatch } = useAppState();
   const { token, url, plants } = state;
 
+  const [pagy, setPagy] = React.useState([]);
+
   const getPlants = async () => {
     const response = await fetch(url + "/plants/", {
+      method: "get",
+      headers: {
+        Authorization: "bearer " + token,
+      },
+    });
+
+    const fetchedPlants = await response.json();
+
+    dispatch({ type: "getPlants", payload: fetchedPlants });
+  };
+
+  const nextPlants = async () => {
+    const response = await fetch(url + plants.pagy.next_url, {
+      method: "get",
+      headers: {
+        Authorization: "bearer " + token,
+      },
+    });
+
+    const fetchedPlants = await response.json();
+
+    dispatch({ type: "getPlants", payload: fetchedPlants });
+  };
+
+  const previousPlants = async () => {
+    const response = await fetch(url + plants.pagy.prev_url, {
       method: "get",
       headers: {
         Authorization: "bearer " + token,
@@ -28,6 +56,7 @@ const Plants = (props) => {
     return (
       <div className="dashboard">
         <ul>
+          {/* This must be state.plants.data.map for deployment */}
           {state.plants.data.map((plant) => (
             <div className="plant" key={plant.id}>
               <h2>Common Name: {plant.common_name}</h2>
@@ -38,6 +67,8 @@ const Plants = (props) => {
             </div>
           ))}
         </ul>
+        <button onClick={previousPlants}>Previous Page</button>
+        <button onClick={nextPlants}>Next Page</button>
       </div>
     );
   };
