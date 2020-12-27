@@ -5,7 +5,8 @@ import { useAppState } from "../AppState.jsx";
 const Plants = (props) => {
   const { state, dispatch } = useAppState();
   const { token, url, plants } = state;
-  console.log(url);
+  console.log(state);
+  console.log(plants);
 
   const getPlants = async () => {
     const response = await fetch(url + "/plants/", {
@@ -30,7 +31,7 @@ const Plants = (props) => {
     return (
       <div className="dashboard">
         <ul>
-          {state.plants.map((plant) => (
+          {state.plants.data.map((plant) => (
             <div className="plant" key={plant.id}>
               <h2>Common Name: {plant.common_name}</h2>
               <h2>Scientific Name: {plant.scientific_name}</h2>
