@@ -3,12 +3,19 @@ import React, { useContext, useReducer } from "react";
 //Initial State of the application:
 const initialState = {
   // THIS WORKS DO NOT REMOVE IT
-  // url: "https://brandon-czaja-plants.herokuapp.com",
-  url: "http://localhost:3000",
+  url: "https://brandon-czaja-plants.herokuapp.com",
+  // url: "http://localhost:3000",
   token: null,
   username: null,
   plants: null,
   blankPlant: {
+    common_name: "",
+    scientific_name: "",
+    family: "",
+    genus: "",
+    image: "",
+  },
+  search: {
     common_name: "",
     scientific_name: "",
     family: "",
@@ -33,6 +40,9 @@ const reducer = (state, action) => {
       newState = { ...state, plants: action.payload };
       return newState;
       break;
+    case "search":
+      newState = { ...state, plants: action.payload };
+      return newState;
     default:
       return state;
       break;

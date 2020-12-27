@@ -14,7 +14,7 @@ const Nav = (props) => {
         </Link>
         {state.token ? (
           <Link to="/plants">
-            <div>Plants</div>
+            <div>All Plants</div>
           </Link>
         ) : null}
         {!state.token ? (
