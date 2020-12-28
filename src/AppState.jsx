@@ -2,8 +2,8 @@ import React, { useContext, useReducer } from "react";
 
 //Initial State of the application:
 const initialState = {
-  // url: "https://brandon-czaja-plants.herokuapp.com",
-  url: "http://localhost:3000",
+  url: "https://brandon-czaja-plants.herokuapp.com",
+  // url: "http://localhost:3000",
   token: null,
   username: null,
   plants: null,
