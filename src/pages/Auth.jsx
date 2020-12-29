@@ -67,7 +67,7 @@ const Auth = (props) => {
 
   return (
     <div>
-      <h1>Plant App {type}</h1>
+      <h1>Plants of the World {type}</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
