@@ -70,6 +70,7 @@ const Auth = (props) => {
       <h1>Plants of the World {type}</h1>
       <form onSubmit={handleSubmit}>
         <input
+          className="auth"
           type="text"
           name="username"
           placeholder="Username"
@@ -77,6 +78,7 @@ const Auth = (props) => {
           onChange={handleChange}
         />
         <input
+          className="auth"
           type="password"
           name="password"
           placeholder="Password"
