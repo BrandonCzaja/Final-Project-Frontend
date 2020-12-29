@@ -85,7 +85,7 @@ const Auth = (props) => {
           value={formData.password}
           onChange={handleChange}
         />
-        <input type="submit" value={type} className="auth" />
+        <input type="submit" value={type} className="auth-submit" />
       </form>
     </div>
   );
