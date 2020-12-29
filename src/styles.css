@@ -6,13 +6,14 @@ body {
   text-align: center;
   width: 55%;
   font-size: x-large;
-  margin: 2% auto;
+  margin: 4% auto;
   font-family: cursive;
 }
 
 #intro a {
   text-decoration: none;
   color: black;
+  font-weight: bolder;
 }
 
 #intro a:hover {
