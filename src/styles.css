@@ -109,5 +109,9 @@ ul {
 }
 
 .auth {
+  cursor: text;
+}
+
+.auth-submit {
   cursor: pointer;
 }
