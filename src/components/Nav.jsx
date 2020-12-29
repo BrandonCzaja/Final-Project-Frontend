@@ -7,11 +7,14 @@ const Nav = (props) => {
 
   return (
     <header>
-      <h1>Plant App</h1>
+      <h1>Plants of the World</h1>
       <nav>
-        <Link to="/">
-          <div>Home</div>
-        </Link>
+        {state.token ? null : (
+          <Link to="/">
+            <div>Home</div>
+          </Link>
+        )}
+
         {state.token ? (
           <Link to="/plants">
             <div>All Plants</div>

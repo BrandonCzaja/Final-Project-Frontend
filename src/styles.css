@@ -1,3 +1,24 @@
+body {
+  background-color: #606c38;
+}
+
+#intro {
+  text-align: center;
+  width: 55%;
+  font-size: x-large;
+  margin: 2% auto;
+  font-family: cursive;
+}
+
+#intro a {
+  text-decoration: none;
+  color: black;
+}
+
+#intro a:hover {
+  color: gold;
+}
+
 header {
   text-align: center;
 }
@@ -7,12 +28,23 @@ header nav {
 }
 
 nav {
-  padding: 2%;
+  padding: 1%;
+  text-decoration: none;
+}
+
+header h1 {
+  font-family: cursive;
+  font-size: xx-large;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
 }
 
 header nav div {
   font-size: larger;
-  background-color: lightblue;
+  background-color: #a5a58d;
   padding: 10px;
   margin: 0 40px;
   border-radius: 7px;
@@ -22,4 +54,36 @@ header nav div {
 header nav div:hover {
   background-color: gold;
   color: black;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plant {
+  padding-top: 2%;
+  margin-right: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 5px;
+  text-align: left;
+  width: 40%;
+  background-color: #a5a58d;
+}
+
+.plant h2 {
+  margin-left: 9%;
+  margin-top: -2%;
+  color: black;
+}
+
+.plant img {
+  border-radius: 7px;
+  border: 10px solid black;
+  width: 80%;
+  height: 500px;
+  margin-left: 8%;
+  margin-bottom: 10%;
 }

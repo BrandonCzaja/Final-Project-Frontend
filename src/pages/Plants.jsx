@@ -55,14 +55,24 @@ const Plants = (props) => {
   const loaded = () => {
     return (
       <div className="dashboard">
+        <button onClick={previousPlants}>Previous Page</button>
+        <button onClick={nextPlants}>Next Page</button>
         <ul>
           {/* This must be state.plants.data.map for deployment */}
           {state.plants.data.map((plant) => (
             <div className="plant" key={plant.id}>
-              <h2>Common Name: {plant.common_name}</h2>
-              <h2>Scientific Name: {plant.scientific_name}</h2>
-              <h2>Plant Family: {plant.family}</h2>
-              <h2>Plant Genus: {plant.genus}</h2>
+              <h2>
+                <i>Common Name</i>: {plant.common_name}
+              </h2>
+              <h2>
+                <i>Scientific Name</i>: {plant.scientific_name}
+              </h2>
+              <h2>
+                <i>Family</i>: {plant.family}
+              </h2>
+              <h2>
+                <i>Genus</i>: {plant.genus}
+              </h2>
               <img src={plant.image} alt={plant.common_name} />
             </div>
           ))}

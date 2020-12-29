@@ -25,8 +25,8 @@ const Auth = (props) => {
         "auth",
         JSON.stringify({ token, username: user.username })
       );
-      // Send user to dashboard
-      props.history.push("/dashboard");
+      // Send user to plants
+      props.history.push("/plants");
     }
   }, [userData]);
 
