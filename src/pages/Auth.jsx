@@ -66,7 +66,7 @@ const Auth = (props) => {
   };
 
   return (
-    <div>
+    <div id="auth">
       <h1>Plants of the World {type}</h1>
       <form onSubmit={handleSubmit}>
         <input

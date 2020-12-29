@@ -55,8 +55,6 @@ const Plants = (props) => {
   const loaded = () => {
     return (
       <div className="dashboard">
-        <button onClick={previousPlants}>Previous Page</button>
-        <button onClick={nextPlants}>Next Page</button>
         <ul>
           {/* This must be state.plants.data.map for deployment */}
           {state.plants.data.map((plant) => (
@@ -77,8 +75,14 @@ const Plants = (props) => {
             </div>
           ))}
         </ul>
-        <button onClick={previousPlants}>Previous Page</button>
-        <button onClick={nextPlants}>Next Page</button>
+        <section id="buttons">
+          <button onClick={previousPlants} class="plants-buttons">
+            Previous Page
+          </button>
+          <button onClick={nextPlants} class="plants-buttons">
+            Next Page
+          </button>
+        </section>
       </div>
     );
   };

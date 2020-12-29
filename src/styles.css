@@ -20,6 +20,12 @@ body {
   color: gold;
 }
 
+#auth {
+  font-family: cursive;
+  text-align: center;
+  margin-top: 4%;
+}
+
 header {
   text-align: center;
 }
@@ -87,4 +93,17 @@ ul {
   height: 500px;
   margin-left: 8%;
   margin-bottom: 10%;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plants-buttons {
+  cursor: pointer;
+  font-size: larger;
+  background-color: #a5a58d;
+  margin-top: -1%;
+  margin-bottom: 5%;
 }
